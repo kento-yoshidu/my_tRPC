@@ -20,3 +20,5 @@ app.use(
 )
 
 app.listen(3000, () => console.log("Server is running..."))
+
+export type AppRouter = typeof appRouter
