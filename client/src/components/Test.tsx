@@ -1,9 +1,14 @@
 import { trpc } from "../utils/trpc"
 
 const Test = () => {
-  const { data } = trpc.hello.useQuery();
+  const data = trpc.helloName.useQuery({ name: "kento", age: 35 })
 
-  return <div>{data}</div>
+  return (
+    <>
+      <p>{data.data?.name}</p>
+      <p>{data.data?.age}</p>
+    </>
+  )
 }
 
 export default Test
