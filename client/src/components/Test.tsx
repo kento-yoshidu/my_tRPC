@@ -1,12 +1,14 @@
+import { useQueries } from "@tanstack/react-query"
 import { trpc } from "../utils/trpc"
 
 const Test = () => {
-  const data = trpc.helloName.useQuery({ name: "kento", age: 35 })
+  const { data } = trpc.todos.useQuery()
+
+  console.log("data is", data)
 
   return (
     <>
-      <p>{data.data?.name}</p>
-      <p>{data.data?.age}</p>
+      <h1>hoge</h1>
     </>
   )
 }
